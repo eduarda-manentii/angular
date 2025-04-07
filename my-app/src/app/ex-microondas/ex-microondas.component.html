@@ -1,50 +1,55 @@
-<div class="container mt-5">
-  <h1>Simulador de Microondas</h1>
+<div class="container my-5">
+  <h1 class="text-center mb-4">Simulador de Microondas</h1>
 
-  <div class="row">
-    <div class="col-md-4">
-      <div class="border border-secondary" style="height: 200px; width: 300px;">
-        <!-- Tela do microondas -->
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4">
+      <div class="border border-secondary rounded bg-light d-flex align-items-center justify-content-center" style="height: 270px;">
+        <span class="text-muted">Tela do micro-ondas</span>
       </div>
     </div>
 
-    <div class="col-md-8">
-      <div class="timer d-flex mb-4">
-        <h2 class="border p-3 text-center rounded bg-dark text-white" style="width: 300px;">
+    <div class="col-md-6">
+      <div class="text-center mb-4">
+        <h2 class="border p-3 rounded bg-dark text-white d-inline-block w-100" style="font-size: 2rem;">
           {{ displayTime }}
         </h2>
       </div>
 
-      <div class="row mb-3">
-        <div class="col-sm-6">
-          <button class="btn btn-secondary w-10" (click)="descongelar()">Descongelar</button>
+      <div class="d-grid gap-3">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-secondary w-100" (click)="descongelar()">Descongelar</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-secondary w-100" (click)="pipoca()">Pipoca</button>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <button class="btn btn-secondary w-10" (click)="pipoca()">Pipoca</button>
+
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-secondary w-100" (click)="adicionar10Segundos()">+10 Seg</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-secondary w-100" (click)="adicionar1Minuto()">+1 Min</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-secondary w-100" (click)="adicionar5Minutos()">+5 Min</button>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-danger w-100" (click)="cancelar()"> Pausar | Cancelar </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-success w-100" (click)="iniciar()">Iniciar | +30 Seg</button>
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-sm-4">
-          <button class="btn btn-secondary w-10" (click)="adicionar10Segundos()">+10 Seg</button>
-        </div>
-        <div class="col-sm-4">
-          <button class="btn btn-secondary w-10" (click)="adicionar1Minuto()">+1 Min</button>
-        </div>
-        <div class="col-sm-4">
-          <button class="btn btn-secondary w-10" (click)="adicionar5Minutos()">+5 Min</button>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-sm-6">
-          <button class="btn btn-primary w-10" (click)="cancelar()">Cancelar</button>
-        </div>
-        <div class="col-sm-6">
-          <button class="btn btn-primary w-10" (click)="iniciar()">Iniciar | +30 Seg</button>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>

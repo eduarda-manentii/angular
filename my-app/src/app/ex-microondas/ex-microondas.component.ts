@@ -13,23 +13,28 @@ export class ExMicroondasComponent {
   displayTime: string = '00:00';
   isCounting: boolean = false;
   isPaused: boolean = false;
+  isPresetMode: boolean = false;
 
   iniciar(): void {
     if (!this.isCounting) {
-      this.currentTime = 30;
+      if (!this.isPresetMode) {
+        this.currentTime = 30;
+      }
       this.updateDisplayTime();
       this.timer();
       this.isCounting = true;
+      this.isPaused = false;
     } else if (this.isPaused) {
       this.timer();
       this.isPaused = false;
-    } else {
+    } else if (!this.isPresetMode) {
       this.currentTime += 30;
       this.updateDisplayTime();
     }
   }
 
   timer(): void {
+    clearInterval(this.timerInterval);
     this.timerInterval = setInterval(() => {
       if (this.currentTime > 0) {
         this.currentTime--;
@@ -49,7 +54,39 @@ export class ExMicroondasComponent {
       this.updateDisplayTime();
       this.isCounting = false;
       this.isPaused = false;
+      this.isPresetMode = false;
     }
+  }
+
+  pipoca(): void {
+    if (!this.isCounting) {
+      this.currentTime = 300;
+      this.updateDisplayTime();
+      this.isPresetMode = true;
+    }
+  }
+
+  descongelar(): void {
+    if (!this.isCounting) {
+      this.currentTime = 600;
+      this.updateDisplayTime();
+      this.isPresetMode = true;
+    }
+  }
+
+  adicionar10Segundos(): void {
+    this.currentTime += 10;
+    this.updateDisplayTime();
+  }
+
+  adicionar1Minuto(): void {
+    this.currentTime += 60;
+    this.updateDisplayTime();
+  }
+
+  adicionar5Minutos(): void {
+    this.currentTime += 300;
+    this.updateDisplayTime();
   }
 
   updateDisplayTime(): void {
@@ -60,31 +97,6 @@ export class ExMicroondasComponent {
 
   padZero(value: number): string {
     return value < 10 ? `0${value}` : `${value}`;
-  }
-
-  descongelar() {
-    this.currentTime += 600;
-    this.updateDisplayTime();
-  }
-
-  pipoca() {
-    this.currentTime += 300;
-    this.updateDisplayTime();
-  }
-
-  adicionar10Segundos() {
-    this.currentTime += 10;
-    this.updateDisplayTime();
-  }
-
-  adicionar1Minuto() {
-    this.currentTime += 60;
-    this.updateDisplayTime();
-  }
-
-  adicionar5Minutos() {
-    this.currentTime += 300;
-    this.updateDisplayTime();
   }
 
 }
