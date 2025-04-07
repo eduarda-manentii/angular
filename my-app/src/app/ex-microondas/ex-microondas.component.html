@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h1>Simulador de Microondas</h1>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="border border-secondary" style="height: 200px; width: 300px;">
+        <!-- Tela do microondas -->
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="timer d-flex mb-4">
+        <h2 class="border p-3 text-center rounded bg-dark text-white" style="width: 300px;">
+          {{ displayTime }}
+        </h2>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <button class="btn btn-secondary w-10" (click)="descongelar()">Descongelar</button>
+        </div>
+        <div class="col-sm-6">
+          <button class="btn btn-secondary w-10" (click)="pipoca()">Pipoca</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <button class="btn btn-secondary w-10" (click)="adicionar10Segundos()">+10 Seg</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-secondary w-10" (click)="adicionar1Minuto()">+1 Min</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-secondary w-10" (click)="adicionar5Minutos()">+5 Min</button>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <button class="btn btn-primary w-10" (click)="cancelar()">Cancelar</button>
+        </div>
+        <div class="col-sm-6">
+          <button class="btn btn-primary w-10" (click)="iniciar()">Iniciar | +30 Seg</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

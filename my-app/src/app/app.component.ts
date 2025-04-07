@@ -6,20 +6,22 @@ import { ExTwoWayBindingComponent } from './ex-two-way-binding/ex-two-way-bindin
 import { ExImcComponent } from './ex-imc/ex-imc.component';
 import { ExLimiteComponent } from './ex-limite/ex-limite.component';
 import { ExMenuComponent } from './ex-menu/ex-menu.component';
+import { ExMicroondasComponent } from './ex-microondas/ex-microondas.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, 
-    TituloComponent, 
-    ExTwoWayBindingComponent, 
-    ExImcComponent, 
-    ExLimiteComponent, 
-    ExMenuComponent
+    RouterOutlet,
+    TituloComponent,
+    ExTwoWayBindingComponent,
+    ExImcComponent,
+    ExLimiteComponent,
+    ExMenuComponent,
+    ExMicroondasComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  
+
 }
