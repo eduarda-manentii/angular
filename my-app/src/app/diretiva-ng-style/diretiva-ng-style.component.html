@@ -1,0 +1,7 @@
+<h1>Exemplo ngStyle</h1>
+<div class="caixa" [ngStyle]="{'width' :larguraStr}">
+    <hr>
+</div>
+<button class="btn btn-primary  m-2" (click)="aumenta()">Aumentar</button>
+<button [disabled]="largura == 0" class="btn btn-primary m-2" (click)="diminui()">Diminuir</button>
+<button [disabled]="largura == 100" class="btn btn-danger m-2" (click)="reinicia()">Reiniciar</button>

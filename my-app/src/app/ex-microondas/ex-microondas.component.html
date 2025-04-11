@@ -4,13 +4,15 @@
   <div class="row justify-content-center">
     <div class="col-md-4 mb-4">
       <div class="border border-secondary rounded bg-light d-flex align-items-center justify-content-center" style="height: 270px;">
-        <span class="text-muted">Tela do micro-ondas</span>
+        <div *ngIf="isCounting">
+          <img [src]="imagemAtual" alt="Imagem imc" class="mb-2">
+        </div>
       </div>
     </div>
 
     <div class="col-md-6">
       <div class="text-center mb-4">
-        <h2 class="border p-3 rounded bg-dark text-white d-inline-block w-100" style="font-size: 2rem;">
+        <h2 class="border p-3 rounded bg-dark text-white d-inline-block w-100 font-digital" style="font-size: 2rem;">
           {{ displayTime }}
         </h2>
       </div>

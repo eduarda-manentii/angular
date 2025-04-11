@@ -1,0 +1,32 @@
+<div class="container mt-5 border p-3 rounded ">
+    <h1>Exemplo ngFor</h1>
+    <button class="btn btn-primary md-3" (click)="addPessoa()">Adiciona Pessoa</button>
+    <hr/>
+    <table class="table">
+        <thead>
+            <tr>
+                <td scope="col"><b>Nome</b></td>
+                <td scope="col"><b>Idade</b></td>
+                <td scope="col"><b>Ações</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pessoaDaLista of listaPessoas">
+                <td>{{pessoaDaLista.nome}}</td>
+                <td>{{pessoaDaLista.idade}}</td>
+                <td>
+                    <i class="bi bi-check-circle-fill text-primary cursor-pointer m-2" (click)="clickPessoa(pessoaDaLista)"
+                    title="Selecionar usuário" style="font-size: 1.4rem;"></i>
+                    <i class="bi bi-trash-fill text-danger cursor-pointer m-2" (click)="removerPessoa(pessoaDaLista)"
+                    title="Remover usuário" style="font-size: 1.4rem;"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <br>
+    <div *ngIf="nomeSelecionado != ''">
+        <h2>{{nomeSelecionado}}</h2>
+        <h3>{{idadeSelecionada}}</h3>
+    </div>
+</div>

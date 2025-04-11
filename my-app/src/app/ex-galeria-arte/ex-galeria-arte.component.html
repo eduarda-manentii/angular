@@ -1,0 +1,45 @@
+<div class="container mt-5 border p-3 rounded">
+    <h1 class="d-flex justify-content-evenly">Galeria de arte</h1>
+    <br>
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="d-flex justify-content-evenly">
+                <button class="btn btn-primary btn-lg" (click)="escolherGenero('todos')">Todos genêros</button>           
+                <button class="btn btn-secondary btn-lg" (click)="escolherGenero('romance')">Romance</button> 
+                <button class="btn btn-danger btn-lg" (click)="escolherGenero('fantasia')">Fantasia</button>
+                <button class="btn btn-info btn-lg" (click)="escolherGenero('distopia')">Distopia</button>          
+            </div>
+        </div>
+    </div>
+    <div>
+        <div *ngIf="categoria == 'todos'">
+            <div *ngFor="let romance of imagensRomance">
+              <img [src]="romance" alt="Imagem de romance">
+            </div>
+            <div *ngFor="let fantasia of imagensFantasia">
+                <img [src]="fantasia" alt="Imagem de fantasia">
+            </div>
+            <div *ngFor="let distopia of imagensDistopia">
+                <img [src]="distopia" alt="Imagem de distopia">
+            </div>
+        </div>
+
+        <div *ngIf="categoria == 'romance'">
+          <div *ngFor="let romance of imagensRomance">
+            <img [src]="romance" alt="Imagem de romance">
+          </div>
+        </div>
+      
+        <div *ngIf="categoria == 'fantasia'">
+          <div *ngFor="let fantasia of imagensFantasia">
+            <img [src]="fantasia" alt="Imagem de fantasia">
+          </div>
+        </div>
+      
+        <div *ngIf="categoria == 'distopia'">
+          <div *ngFor="let distopia of imagensDistopia">
+            <img [src]="distopia" alt="Imagem de distopia">
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,10 @@
-.active {
+.navbar .nav-link.active {
     font-weight: bold;
-    color:  #ffffff;
+    color: #ffffff !important;
     border-bottom: 2px solid #fafafa;
 }
+
+.navbar .nav-link {
+    color: #dcdcdc !important;
+}
+

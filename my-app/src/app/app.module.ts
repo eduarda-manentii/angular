@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component'; 
+
 import { TituloComponent } from './titulo/titulo.component';
 import { ExPropertyBindingComponent } from './ex-property-binding/ex-property-binding.component';
 import { ExTwoWayBindingComponent } from './ex-two-way-binding/ex-two-way-binding.component';
@@ -14,11 +17,13 @@ import { DiretivaNgModelComponent } from './diretiva-ng-model/diretiva-ng-model.
 import { DiretivaNgStyleComponent } from './diretiva-ng-style/diretiva-ng-style.component';
 import { DiretivaNgSwitchComponent } from './diretiva-ng-switch/diretiva-ng-switch.component';
 
-@Component({
-  selector: 'app-root',
-  imports: [
-    RouterOutlet,
+import { routes } from './app.routes';
+
+@NgModule({
+  declarations: [
+    AppComponent,
     TituloComponent,
+    ExPropertyBindingComponent,
     ExTwoWayBindingComponent,
     ExImcComponent,
     ExLimiteComponent,
@@ -31,9 +36,11 @@ import { DiretivaNgSwitchComponent } from './diretiva-ng-switch/diretiva-ng-swit
     DiretivaNgStyleComponent,
     DiretivaNgSwitchComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes) 
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppComponent {
-
-}
+export class AppModule { }

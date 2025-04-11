@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ex-microondas',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './ex-microondas.component.html',
   styleUrl: './ex-microondas.component.scss'
 })
@@ -14,16 +15,18 @@ export class ExMicroondasComponent {
   isCounting: boolean = false;
   isPaused: boolean = false;
   isPresetMode: boolean = false;
+  imagemAtual: string = '';
 
   iniciar(): void {
     if (!this.isCounting) {
       if (!this.isPresetMode) {
-        this.currentTime = 30;
+        this.currentTime += 30;
       }
       this.updateDisplayTime();
       this.timer();
       this.isCounting = true;
       this.isPaused = false;
+      this.isPresetMode = false;
     } else if (this.isPaused) {
       this.timer();
       this.isPaused = false;
@@ -37,6 +40,7 @@ export class ExMicroondasComponent {
     clearInterval(this.timerInterval);
     this.timerInterval = setInterval(() => {
       if (this.currentTime > 0) {
+        this.imagemAtual = 'assets/images/gatinhogirando.gif';
         this.currentTime--;
         this.updateDisplayTime();
       } else {
@@ -76,16 +80,19 @@ export class ExMicroondasComponent {
 
   adicionar10Segundos(): void {
     this.currentTime += 10;
+    this.isPresetMode = true;
     this.updateDisplayTime();
   }
 
   adicionar1Minuto(): void {
     this.currentTime += 60;
+    this.isPresetMode = true;
     this.updateDisplayTime();
   }
 
   adicionar5Minutos(): void {
     this.currentTime += 300;
+    this.isPresetMode = true;
     this.updateDisplayTime();
   }
 
