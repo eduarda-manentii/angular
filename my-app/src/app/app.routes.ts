@@ -11,6 +11,8 @@ import { DiretivaNgModelComponent } from './diretiva-ng-model/diretiva-ng-model.
 import { DiretivaNgStyleComponent } from './diretiva-ng-style/diretiva-ng-style.component';
 import { DiretivaNgSwitchComponent } from './diretiva-ng-switch/diretiva-ng-switch.component';
 import { ExGaleriaArteComponent } from './ex-galeria-arte/ex-galeria-arte.component';
+import { CpPaiComponent } from './modulo-teste/cp-pai/cp-pai.component';
+import { CpPaiComponent as CpPaiComponent2 } from './modulo-teste-2/cp-pai/cp-pai.component';
 
 export const routes: Routes = [
     {
@@ -60,5 +62,13 @@ export const routes: Routes = [
     {
         path: 'galeria-arte',
         component: ExGaleriaArteComponent
+    },
+    {
+        path: 'cp-pai-carro',
+        component: CpPaiComponent
+    },
+    {
+        path: 'cp-pai-sorteador',
+        component: CpPaiComponent2
     }
 ];
