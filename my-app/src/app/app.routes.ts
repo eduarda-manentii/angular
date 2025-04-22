@@ -13,62 +13,22 @@ import { DiretivaNgSwitchComponent } from './diretiva-ng-switch/diretiva-ng-swit
 import { ExGaleriaArteComponent } from './ex-galeria-arte/ex-galeria-arte.component';
 import { CpPaiComponent } from './modulo-teste/cp-pai/cp-pai.component';
 import { CpPaiComponent as CpPaiComponent2 } from './modulo-teste-2/cp-pai/cp-pai.component';
+import { ExPipesComponent } from './ex-pipes/ex-pipes.component';
 
 export const routes: Routes = [
-    {
-        path: 'property-binding',
-        component: ExPropertyBindingComponent
-    },
-    {
-        path: 'two-way-binding',
-        component: ExTwoWayBindingComponent
-    },
-    {
-        path: 'imc',
-        component: ExImcComponent
-    },
-    {
-        path: 'limite',
-        component: ExLimiteComponent
-    },
-    {
-        path: 'microondas',
-        component: ExMicroondasComponent
-    },
-    {
-        path: 'diretiva-ng-class',
-        component: DiretivaNgClassComponent
-    },
-    {
-        path: 'diretiva-ng-for',
-        component: DiretivaNgForComponent
-    },
-    {
-        path: 'diretiva-ng-if',
-        component: DiretivaNgIfComponent
-    },
-    {
-        path: 'diretiva-ng-model',
-        component: DiretivaNgModelComponent
-    },
-    {
-        path: 'diretiva-ng-style',
-        component: DiretivaNgStyleComponent
-    },
-    {
-        path: 'diretiva-ng-switch',
-        component: DiretivaNgSwitchComponent
-    },
-    {
-        path: 'galeria-arte',
-        component: ExGaleriaArteComponent
-    },
-    {
-        path: 'cp-pai-carro',
-        component: CpPaiComponent
-    },
-    {
-        path: 'cp-pai-sorteador',
-        component: CpPaiComponent2
-    }
+    { path: 'property-binding',          component: ExPropertyBindingComponent },
+    { path: 'two-way-binding',           component: ExTwoWayBindingComponent },
+    { path: 'imc',                       component: ExImcComponent },
+    { path: 'limite',                    component: ExLimiteComponent },
+    { path: 'microondas',                component: ExMicroondasComponent },
+    { path: 'diretiva-ng-class',         component: DiretivaNgClassComponent },
+    { path: 'diretiva-ng-for',           component: DiretivaNgForComponent },
+    { path: 'diretiva-ng-if',            component: DiretivaNgIfComponent },
+    { path: 'diretiva-ng-model',         component: DiretivaNgModelComponent },
+    { path: 'diretiva-ng-style',         component: DiretivaNgStyleComponent },
+    { path: 'diretiva-ng-switch',        component: DiretivaNgSwitchComponent },
+    { path: 'galeria-arte',              component: ExGaleriaArteComponent },
+    { path: 'cp-pai-carro',              component: CpPaiComponent },
+    { path: 'cp-pai-sorteador',          component: CpPaiComponent2 },
+    { path: 'pipe',                      component: ExPipesComponent },
 ];
