@@ -14,6 +14,7 @@ import { ExGaleriaArteComponent } from './ex-galeria-arte/ex-galeria-arte.compon
 import { CpPaiComponent } from './modulo-teste/cp-pai/cp-pai.component';
 import { CpPaiComponent as CpPaiComponent2 } from './modulo-teste-2/cp-pai/cp-pai.component';
 import { ExPipesComponent } from './ex-pipes/ex-pipes.component';
+import { CpAgrupadorComponent } from './md-service/cp-agrupador/cp-agrupador.component';
 
 export const routes: Routes = [
     { path: 'property-binding',          component: ExPropertyBindingComponent },
@@ -31,4 +32,5 @@ export const routes: Routes = [
     { path: 'cp-pai-carro',              component: CpPaiComponent },
     { path: 'cp-pai-sorteador',          component: CpPaiComponent2 },
     { path: 'pipe',                      component: ExPipesComponent },
+    { path: 'agrupador',                 component: CpAgrupadorComponent },
 ];
