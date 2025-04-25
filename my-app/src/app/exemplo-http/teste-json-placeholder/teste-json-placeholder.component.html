@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <button (click)="buscaUsuarios()" class="btn btn-primary">Carregar Usuários</button>
+    <br>
+    <br>
+    <div *ngIf="users && users.length">
+        <h2>Lista de Usuários</h2>
+        <ul>
+            <li *ngFor="let user of users">
+            <strong> {{ user.name }} </strong> ({{ user.username }}) - {{ user.email }}
+            <br>
+            Endereço: {{ user.address.street }}, {{ user.address.city }}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <form [formGroup]="userForm">
+        <div class="row g-3" >
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label for="title" class="form-label">Título</label>
+                <input formControlName="title" type="text" class="form-control"  placeholder="Digite o título" />
+              </div>
+            </div>
+    
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="body" class="form-label">Corpo</label>
+                <input formControlName="body" type="text" class="form-control" placeholder="Digite o corpo" />
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="userId" class="form-label">User ID</label>
+                <input formControlName="userId" type="text" class="form-control" placeholder="Digite o ID do usuário" />
+              </div>
+            </div>
+            
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary" (click)="cadastrarUsuario()">Cadastrar</button>
+            </div>
+        </div>      
+    </form>
+
+    <br>
+    <span> <strong>ID: </strong> {{ id }} </span> <br>
+    <span> <strong>USER-ID: </strong> {{ userId }} </span> <br>
+    <span> <strong>TITLE: </strong> {{ title }} </span> <br>
+    <span> <strong>BODY: </strong> {{ body }} </span>
+</div>
